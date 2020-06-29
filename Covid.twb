@@ -1,0 +1,1539 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1211.1636                               -->
+<workbook original-version='18.1' source-build='2019.4.1 (20194.19.1211.1636)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <CascadingFilters />
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
+        <aliases>
+          <alias key='0' value='Total Cases' />
+          <alias key='1' value='New Cases' />
+        </aliases>
+        <members>
+          <member alias='Total Cases' value='0' />
+          <member alias='New Cases' value='1' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Union (COVID19Cases)' inline='true' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='COVID19Cases' name='excel-direct.1pcyf6p07ufchf15emwci1j1t6r0'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/CMU/Code/Tableau/Covid/COVID19Cases.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation all='true' name='Union' type='union'>
+          <columns header='yes'>
+            <column datatype='string' name='Case_Type' />
+            <column datatype='integer' name='Cases' />
+            <column datatype='integer' name='Difference' />
+            <column datatype='date' name='Date' />
+            <column datatype='string' name='Country_Region' />
+            <column datatype='string' name='Province_State' />
+            <column datatype='string' name='Admin2' />
+            <column datatype='integer' name='FIPS' />
+            <column datatype='real' name='Lat' />
+            <column datatype='real' name='Long' />
+            <column datatype='string' name='Sheet' />
+            <column datatype='string' name='Table Name' />
+          </columns>
+          <relation connection='excel-direct.1pcyf6p07ufchf15emwci1j1t6r0' name='COVID-19 Confirmed' table='[&apos;COVID-19 Confirmed$&apos;]' type='table'>
+            <columns gridOrigin='A1:J10001:no:A1:J10001:0' header='yes' outcome='2'>
+              <column datatype='string' name='Case_Type' ordinal='0' />
+              <column datatype='integer' name='Cases' ordinal='1' />
+              <column datatype='integer' name='Difference' ordinal='2' />
+              <column datatype='date' name='Date' ordinal='3' />
+              <column datatype='string' name='Country_Region' ordinal='4' />
+              <column datatype='string' name='Province_State' ordinal='5' />
+              <column datatype='string' name='Admin2' ordinal='6' />
+              <column datatype='integer' name='FIPS' ordinal='7' />
+              <column datatype='real' name='Lat' ordinal='8' />
+              <column datatype='real' name='Long' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1pcyf6p07ufchf15emwci1j1t6r0' name='COVID-19 Deaths' table='[&apos;COVID-19 Deaths$&apos;]' type='table'>
+            <columns gridOrigin='A1:J10001:no:A1:J10001:0' header='yes' outcome='2'>
+              <column datatype='string' name='Case_Type' ordinal='0' />
+              <column datatype='integer' name='Cases' ordinal='1' />
+              <column datatype='integer' name='Difference' ordinal='2' />
+              <column datatype='date' name='Date' ordinal='3' />
+              <column datatype='string' name='Country_Region' ordinal='4' />
+              <column datatype='string' name='Province_State' ordinal='5' />
+              <column datatype='string' name='Admin2' ordinal='6' />
+              <column datatype='integer' name='FIPS' ordinal='7' />
+              <column datatype='real' name='Lat' ordinal='8' />
+              <column datatype='real' name='Long' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Union]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Case_Type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Case_Type]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Case_Type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cases</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cases]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Cases</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Difference</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Difference]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Difference</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country_Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country_Region]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Country_Region</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province_State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Province_State]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Province_State</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Admin2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Admin2]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Admin2</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FIPS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FIPS]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>FIPS</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Lat]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Lat</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Long]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Long</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sheet</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sheet]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Sheet</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+      </column>
+      <column caption='Log of Metric Switcher' datatype='real' name='[Calculation_1725441674074918913]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOG(SUM([Calculation_1725441674061975552]))' />
+      </column>
+      <column caption='Max Date' datatype='date' name='[Calculation_1725441674075820034]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{MAX([Date])}' />
+      </column>
+      <column caption='Date is Max' datatype='boolean' name='[Calculation_1725441674076266499]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Calculation_1725441674075820034] = [Date]' />
+      </column>
+      <column caption='Location Detail' datatype='string' name='[Calculation_1725441674077786116]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Country_Region] = &quot;US&quot; THEN [Admin2]&#13;&#10;ELSEIF [Province_State] != &quot;N/A&quot; THEN [Province_State]&#13;&#10;ELSE [Country_Region]&#13;&#10;END' />
+      </column>
+      <column caption='Province State Label' datatype='string' name='[Calculation_1725441674084954117]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Province_State] != &quot;N/A&quot; THEN [Province_State]&#13;&#10;ELSE &quot;&quot;&#13;&#10;END&#13;&#10;//Used in map tooltip to display a province/state name, if present' />
+      </column>
+      <column caption='Admin2 Label (US)' datatype='string' name='[Calculation_1725441674085089286]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Country_Region] = &quot;US&quot;&#13;&#10;THEN &quot; | County: &quot; + [Admin2]&#13;&#10;ELSE &quot;&quot;&#13;&#10;END&#13;&#10;//Used in the map tooltip to display a county name as well, if in the US' />
+      </column>
+      <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+      <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' datatype='real' name='[Lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='None' datatype='string' name='[Province_State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Lat]' derivation='None' name='[none:Lat:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Long]' derivation='None' name='[none:Long:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:ok]' pivot='key' type='ordinal' />
+      <group caption='Tooltip (DAY(Date))' hidden='true' name='[Tooltip (DAY(Date))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tdy:Date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Location Detail)' hidden='true' name='[Tooltip (Location Detail)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1725441674077786116]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Location Detail,Case_Type,Lat,Long)' hidden='true' name='[Tooltip (Location Detail,Case_Type,Lat,Long)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1725441674077786116]' />
+          <groupfilter function='level-members' level='[Case_Type]' />
+          <groupfilter function='level-members' level='[none:Lat:ok]' />
+          <groupfilter function='level-members' level='[none:Long:ok]' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='Country_Region, Province_State'>
+          <field>[Country_Region]</field>
+          <field>[Province_State]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.522988' measure-ordering='alphabetic' measure-percentage='0.436782' parameter-percentage='0.0402299' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Case_Type:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Confirmed&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Deaths&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <aliases>
+            <alias key='0' value='Total Cases' />
+            <alias key='1' value='New Cases' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='CasesbyCountry'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='Total Cases' />
+                <alias key='1' value='New Cases' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+            <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+            </column>
+            <column caption='Max Date' datatype='date' name='[Calculation_1725441674075820034]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{MAX([Date])}' />
+            </column>
+            <column caption='Date is Max' datatype='boolean' name='[Calculation_1725441674076266499]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Calculation_1725441674075820034] = [Date]' />
+            </column>
+            <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Cases]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Difference]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1725441674076266499]' derivation='None' name='[none:Calculation_1725441674076266499:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674061975552]' derivation='Sum' name='[sum:Calculation_1725441674061975552:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1725441674076266499:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' direction='DESC' using='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' />
+          <slices>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows onTop='true' total='true'>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</rows>
+        <cols>([federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk] * [federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk])</cols>
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{822A86D4-F8F6-4B90-BBC1-056BAAEEE4B1}' />
+    </worksheet>
+    <worksheet name='CasesbyDay'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='Total Cases' />
+                <alias key='1' value='New Cases' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+            <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+            </column>
+            <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Cases]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Difference]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Max' name='[max:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1725441674061975552]' derivation='Sum' name='[sum:Calculation_1725441674061975552:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' filter-group='3'>
+            <groupfilter function='level-members' level='[none:Country_Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]' included-values='in-range-or-null'>
+            <min>#2020-01-22#</min>
+          </filter>
+          <slices>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</column>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[tdy:Date:ok]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' />
+              <text column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' />
+              <text column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]' />
+            </encodings>
+            <label-data column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[max:Date:qk]' />
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[tdy:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run bold='true'>&lt;Sheet name=&quot;Tooltip&quot; maxwidth=&quot;300&quot; maxheight=&quot;300&quot; filter=&quot;&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[tdy:Date:ok]&gt;&quot;&gt;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]&gt;&#10;</run>
+                <run fontsize='10'>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='right' />
+                <format attr='vertical-align' value='top' />
+                <format attr='wrap' value='off' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f28e2b' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='most-recent' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]</rows>
+        <cols>([federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk] / [federated.1vioyut0jw48041dm0a6v1ov7vvy].[tdy:Date:ok])</cols>
+      </table>
+      <simple-id uuid='{2DB978B2-77F3-4B2B-AB8C-25AE49D3EC0B}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='Total Cases' />
+                <alias key='1' value='New Cases' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+            <column datatype='string' name='[Admin2]' role='dimension' type='nominal' />
+            <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+            </column>
+            <column caption='Log of Metric Switcher' datatype='real' name='[Calculation_1725441674074918913]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG(SUM([Calculation_1725441674061975552]))' />
+            </column>
+            <column caption='Max Date' datatype='date' name='[Calculation_1725441674075820034]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{MAX([Date])}' />
+            </column>
+            <column caption='Date is Max' datatype='boolean' name='[Calculation_1725441674076266499]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Calculation_1725441674075820034] = [Date]' />
+            </column>
+            <column caption='Location Detail' datatype='string' name='[Calculation_1725441674077786116]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Country_Region] = &quot;US&quot; THEN [Admin2]&#13;&#10;ELSEIF [Province_State] != &quot;N/A&quot; THEN [Province_State]&#13;&#10;ELSE [Country_Region]&#13;&#10;END' />
+            </column>
+            <column caption='Province State Label' datatype='string' name='[Calculation_1725441674084954117]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Province_State] != &quot;N/A&quot; THEN [Province_State]&#13;&#10;ELSE &quot;&quot;&#13;&#10;END&#13;&#10;//Used in map tooltip to display a province/state name, if present' />
+            </column>
+            <column caption='Admin2 Label (US)' datatype='string' name='[Calculation_1725441674085089286]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Country_Region] = &quot;US&quot;&#13;&#10;THEN &quot; | County: &quot; + [Admin2]&#13;&#10;ELSE &quot;&quot;&#13;&#10;END&#13;&#10;//Used in the map tooltip to display a county name as well, if in the US' />
+            </column>
+            <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Cases]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Difference]' role='measure' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[Lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Province_State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Calculation_1725441674075820034]' derivation='Attribute' name='[attr:Calculation_1725441674075820034:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1725441674084954117]' derivation='Attribute' name='[attr:Calculation_1725441674084954117:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674085089286]' derivation='Attribute' name='[attr:Calculation_1725441674085089286:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country_Region]' derivation='Attribute' name='[attr:Country_Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674076266499]' derivation='None' name='[none:Calculation_1725441674076266499:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674077786116]' derivation='None' name='[none:Calculation_1725441674077786116:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Lat]' derivation='None' name='[none:Lat:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Long]' derivation='None' name='[none:Long:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1725441674061975552]' derivation='Sum' name='[sum:Calculation_1725441674061975552:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1725441674074918913]' derivation='User' name='[usr:Calculation_1725441674074918913:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1725441674076266499:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' filter-group='3'>
+            <groupfilter function='level-members' level='[none:Country_Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Long:qk]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <slices>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]</column>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</column>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Long:qk]</column>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' />
+              <size column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[usr:Calculation_1725441674074918913:qk]' />
+              <lod column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674077786116:nk]' />
+              <tooltip column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674075820034:ok]' />
+              <tooltip column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Country_Region:nk]' />
+              <tooltip column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674085089286:nk]' />
+              <tooltip column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674084954117:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='monospace,monospace' fontsize='16'>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674075820034:ok]&gt; </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='monospace,monospace' fontsize='16'>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Country_Region:nk]&gt; </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='monospace,monospace' fontsize='16'>&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674084954117:nk]&gt;&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[attr:Calculation_1725441674085089286:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='monospace,monospace' fontsize='16'>&lt;Sheet name=&quot;MapTooltip&quot; maxwidth=&quot;300&quot; maxheight=&quot;300&quot; filter=&quot;&lt;[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674077786116:nk]&gt;&quot;&gt;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+                <format attr='has-halo' value='true' />
+                <format attr='halo-color' value='#ffffff' />
+                <format attr='mark-transparency' value='132' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Lat:qk]</rows>
+        <cols>([federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk] * [federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Long:qk])</cols>
+      </table>
+      <simple-id uuid='{D8035F69-6082-432B-8184-4B73BD39B6BF}' />
+    </worksheet>
+    <worksheet name='MapTooltip'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='Total Cases' />
+                <alias key='1' value='New Cases' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+            <column datatype='string' name='[Admin2]' role='dimension' type='nominal' />
+            <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+            </column>
+            <column caption='Max Date' datatype='date' name='[Calculation_1725441674075820034]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{MAX([Date])}' />
+            </column>
+            <column caption='Date is Max' datatype='boolean' name='[Calculation_1725441674076266499]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Calculation_1725441674075820034] = [Date]' />
+            </column>
+            <column caption='Location Detail' datatype='string' name='[Calculation_1725441674077786116]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Country_Region] = &quot;US&quot; THEN [Admin2]&#13;&#10;ELSEIF [Province_State] != &quot;N/A&quot; THEN [Province_State]&#13;&#10;ELSE [Country_Region]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Cases]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Difference]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Province_State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Calculation_1725441674076266499]' derivation='None' name='[none:Calculation_1725441674076266499:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674061975552]' derivation='Sum' name='[sum:Calculation_1725441674061975552:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[Tooltip (Location Detail)]'>
+            <groupfilter function='level-members' level='[Calculation_1725441674077786116]' user:ui-action-filter='[Action - MapTooltip]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]'>
+            <groupfilter function='member' level='[none:Calculation_1725441674076266499:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</column>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[Tooltip (Location Detail)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</rows>
+        <cols>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]</cols>
+      </table>
+      <simple-id uuid='{DD13DFE5-774A-431F-BD6F-5F67D7913E5D}' />
+    </worksheet>
+    <worksheet name='Tooltip'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <aliases>
+                <alias key='0' value='Total Cases' />
+                <alias key='1' value='New Cases' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+            <column caption='Metric Switcher' datatype='integer' name='[Calculation_1725441674061975552]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = 0 THEN [Cases] ELSE [Difference] END' />
+            </column>
+            <column datatype='string' name='[Case_Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Cases]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Difference]' role='measure' type='quantitative' />
+            <column-instance column='[Case_Type]' derivation='None' name='[none:Case_Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1725441674061975552]' derivation='Sum' name='[sum:Calculation_1725441674061975552:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[Tooltip (DAY(Date))]'>
+            <groupfilter function='level-members' level='[tdy:Date:ok]' user:ui-action-filter='[Action - Tooltip]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[Tooltip (DAY(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</rows>
+        <cols>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]</cols>
+      </table>
+      <simple-id uuid='{769F1EDA-E7DE-48AB-A106-A739DA348C21}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='COVID-19'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='Union (COVID19Cases)' name='federated.1vioyut0jw48041dm0a6v1ov7vvy' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Total Cases' caption='Select Metric' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <aliases>
+            <alias key='0' value='Total Cases' />
+            <alias key='1' value='New Cases' />
+          </aliases>
+          <members>
+            <member alias='Total Cases' value='0' />
+            <member alias='New Cases' value='1' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.1vioyut0jw48041dm0a6v1ov7vvy'>
+        <column aggregation='None' datatype='string' name='[Country_Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+        <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Country_Region]' derivation='None' name='[none:Country_Region:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='88505' id='7' param='horz' type='layout-flow' w='99062' x='469' y='10566'>
+            <zone h='88505' id='5' type='layout-basic' w='99062' x='469' y='10566'>
+              <zone h='31594' id='3' name='CasesbyDay' show-title='false' w='90611' x='8920' y='10566'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='30662' id='12' name='Map' show-title='false' w='90611' x='8920' y='42160'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='26249' id='14' name='CasesbyCountry' show-title='false' w='99062' x='469' y='72822'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='31594' id='16' type='empty' w='8451' x='469' y='10566'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='30662' id='17' type='empty' w='8451' x='469' y='42160'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='4817' id='15' type='text' w='99062' x='469' y='929'>
+            <formatted-text>
+              <run bold='true' fontname='Benton Sans Book' fontsize='20'>COVID-19 Cases</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='4820' id='8' name='CasesbyDay' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='32837' x='469' y='5746'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='4820' id='11' mode='compact' param='[Parameters].[Parameter 1]' type='paramctrl' w='35075' x='33306' y='5746'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='4820' id='9' mode='dropdown' name='CasesbyDay' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' type='filter' values='cascading' w='31150' x='68381' y='5746'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98142' id='18' param='vert' type='layout-flow' w='99062' x='469' y='929'>
+                <zone forceUpdate='true' h='4817' id='15' type='text' w='99062' x='469' y='929'>
+                  <formatted-text>
+                    <run bold='true' fontname='Benton Sans Book' fontsize='20'>COVID-19 Cases</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4820' id='11' mode='compact' param='[Parameters].[Parameter 1]' type='paramctrl' w='35075' x='33306' y='5746'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4820' id='8' name='CasesbyDay' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' w='32837' x='469' y='5746'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4820' id='9' mode='dropdown' name='CasesbyDay' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' type='filter' values='cascading' w='31150' x='68381' y='5746'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='244' h='31594' id='3' is-fixed='true' name='CasesbyDay' show-title='false' w='90611' x='8920' y='10566'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='238' h='30662' id='12' is-fixed='true' name='Map' show-title='false' w='90611' x='8920' y='42160'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='202' h='26249' id='14' is-fixed='true' name='CasesbyCountry' show-title='false' w='99062' x='469' y='72822'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D24D48A3-757E-4C6D-8FAE-B2672AD42635}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='dashboard' maximized='true' name='COVID-19'>
+      <viewpoints>
+        <viewpoint name='CasesbyCountry' />
+        <viewpoint name='CasesbyDay'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+          <highlight field='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[usr:Calculation_1725441674074918913:qk]' type='size'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{F62B41BF-17D2-4DAE-A18B-1DF5B90D1354}' />
+    </window>
+    <window class='worksheet' hidden='true' name='CasesbyCountry'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3770926C-CDC1-49DF-B47F-B780DF1C2286}' />
+    </window>
+    <window class='worksheet' hidden='true' name='CasesbyDay'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card mode='dropdown' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]' type='filter' values='cascading' />
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[sum:Calculation_1725441674061975552:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Date:qk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{36950081-3804-4CE4-9434-280A2F6CDE86}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card size='26' type='pages' />
+            <card size='44' type='filters' />
+            <card size='189' type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[usr:Calculation_1725441674074918913:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <fields>
+                  <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>&quot;Confirmed&quot;</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674077786116:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674084954117:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674085089286:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Country_Region:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[yr:Calculation_1725441674075820034:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6655AFB3-1F6A-4D50-A429-B3588F20C00C}' />
+    </window>
+    <window class='worksheet' hidden='true' name='MapTooltip'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Calculation_1725441674076266499:nk]</field>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{12D53547-4A9B-4C55-8E25-C31F83760E5F}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Tooltip'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vioyut0jw48041dm0a6v1ov7vvy].[none:Case_Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DD46C1F9-5E26-44CF-A25A-85A23B629F4F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='COVID-19' width='192'>
+      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
+      5hqi7dOL/AU60R2lSEPoVwAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
